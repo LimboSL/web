@@ -350,3 +350,7 @@ footer.pie { background: var(--tinta); color: var(--papel); padding: 44px 0 28px
 /* Formularios dentro de secciones oscuras: texto siempre legible */
 .panel, .panel label, .panel .check, .panel .check span { color: var(--tinta); }
 .oscura .panel .check a { color: var(--tinta); }
+
+.nota-form { font-size: 13px; color: var(--gris); margin: 0; }
+.boletin-alta { display: grid; gap: 16px; align-content: start; }
+.boletin-alta .btn { justify-self: start; }

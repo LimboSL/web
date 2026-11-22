@@ -161,60 +161,37 @@
       <td>${esc(s.ref)}</td><td><strong>${esc(s.nombre)}</strong><br><small>${esc(s.nota)}</small></td>
       <td><button type="button" data-quiero="${esc(s.nombre)}">¡Lo quiero!</button></td></tr>`).join("");
 
-  /* Diálogo "Lo quiero" */
-  const dlg = $("#dlg-quiero");
+  /* Formulario único de Atención al Cliente: los botones lo rellenan */
+  const fC = $("#form-contacto");
+  function irAlFormulario(motivo, boletin) {
+    $("#a-motivo").value = motivo;
+    if (boletin) $("#a-boletin").checked = true;
+    const msg = $("#a-mensaje"), auto = ["", "Avisadme si lo fabricáis.", "Quiero recibir el Boletín Interno."];
+    if (auto.includes(msg.value)) msg.value = /Lo quiero/.test(motivo) ? auto[1] : /Boletín/.test(motivo) ? auto[2] : "";
+    $("#contacto").scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => $("#a-nombre").focus({ preventScroll: true }), 600);
+  }
   document.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-quiero]");
-    if (!b) return;
-    $("#q-producto").value = b.dataset.quiero;
-    $("#q-titulo").textContent = b.dataset.quiero;
-    $("#form-quiero .estado").textContent = "";
-    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+    const q = e.target.closest("[data-quiero]");
+    if (q) { e.preventDefault(); irAlFormulario("Lo quiero: " + q.dataset.quiero); return; }
+    const m = e.target.closest("[data-motivo]");
+    if (m) { e.preventDefault(); irAlFormulario(m.dataset.motivo, m.hasAttribute("data-boletin")); }
   });
-  $("#dlg-cerrar").addEventListener("click", () => dlg.close ? dlg.close() : dlg.removeAttribute("open"));
+  document.querySelectorAll('a[href="#teorias"]').forEach((a) => a.addEventListener("click", () => { if (!$("#a-motivo").value) $("#a-motivo").value = "Mi teoría sobre Miguel"; }));
 
-  /* Teorías sobre Miguel en Atención al Cliente */
-  document.querySelectorAll('a[href="#teorias"]').forEach((a) => a.addEventListener("click", () => { const m = $("#a-motivo"); if (m && !m.value) m.value = "Mi teoría sobre Miguel"; }));
-
-  /* Envío de formularios */
-  document.querySelectorAll("form[data-asunto]").forEach((f) => f.addEventListener("submit", async (e) => {
+  /* Envío: abre el correo de la persona con todo escrito (sin servidores intermedios) */
+  fC.addEventListener("submit", (e) => {
     e.preventDefault();
-    const estado = $(".estado", f);
-    if (!f.reportValidity()) return;
-    const datos = Object.fromEntries(new FormData(f).entries());
-    if (datos._honey) return;
-    delete datos._honey;
-    // Prueba del consentimiento: qué casillas marcó y cuándo
-    datos.consentimiento = [...f.querySelectorAll(".check")].map((c) => c.textContent.trim()).join(" | ");
-    datos.fecha_consentimiento = new Date().toISOString();
-    datos._subject = f.dataset.asunto + (datos.producto ? `: ${datos.producto}` : "");
-    datos._template = "table";
-    estado.textContent = "Enviando...";
-    const esBoletin = f.id === "form-boletin";
-    try {
-      if (esBoletin && CONFIG.boletin) {
-        // Formulario de Brevo con doble confirmación
-        const b = new FormData();
-        b.append("EMAIL", datos.email);
-        if (datos.nombre) b.append("FIRSTNAME", datos.nombre);
-        b.append("OPT_IN", "1");
-        b.append("email_address_check", "");
-        b.append("locale", "es");
-        await fetch(CONFIG.boletin, { method: "POST", mode: "no-cors", body: b });
-        estado.textContent = f.dataset.ok;
-        f.reset();
-        return;
-      }
-      const r = await fetch(CONFIG.formulario, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(datos) });
-      if (!r.ok) throw new Error();
-      estado.textContent = esBoletin
-        ? "Apuntado. Antes del primer boletín te llegará un email para confirmar tu alta. Si no lo confirmas, borramos tu dirección."
-        : (f.dataset.ok || "Recibido. Te respondemos antes del próximo lunes 25.");
-      f.reset();
-    } catch (err) {
-      estado.textContent = `No se ha podido enviar. Escríbenos a ${CONFIG.correo}.`;
-    }
-  }));
+    const nombre = $("#a-nombre").value.trim();
+    const motivo = $("#a-motivo").value.trim() || "Consulta";
+    const lineas = [$("#a-mensaje").value.trim(), "", "—", "Nombre: " + nombre];
+    if ($("#a-boletin").checked) lineas.push("Quiero apuntarme al Boletín Interno.");
+    if ($("#a-publicar").checked) lineas.push("Podéis publicar mi teoría citando solo mi nombre de pila.");
+    lineas.push("Confirmo que tengo 14 años o más y he leído la política de privacidad.");
+    const url = `mailto:${CONFIG.correo}?subject=${encodeURIComponent("[Web] " + motivo)}&body=${encodeURIComponent(lineas.join("\n"))}`;
+    window.location.href = url;
+    $("#form-contacto .estado").innerHTML = `Se ha abierto tu correo con el mensaje listo. ¿No se ha abierto? Escríbenos a <a href="mailto:${CONFIG.correo}">${CONFIG.correo}</a>.`;
+  });
 
   /* Visítanos: sedes */
   $("#sedes").innerHTML = SEDES.map((d) => {

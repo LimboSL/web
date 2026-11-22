@@ -118,7 +118,7 @@
         <span class="pestana" style="justify-self:start">Bolsa de empleo</span>
         <h2 style="font-size:clamp(34px,7vw,56px)">Hazte empleado de Limbo S.L.</h2>
         <p>Cada mes, alguien de nuestra comunidad entra en el equipo: lo convertimos en personaje y sale en un clip de la serie. Puede que hasta tenga su propio spin-off.</p>
-        <p>Rellena tu solicitud en <a href="#colaboraciones">Colaboraciones y propuestas</a> eligiendo «Quiero salir en la serie». Para salir en la serie tienes que ser mayor de edad. Nunca publicamos nada tuyo sin tu permiso por escrito.</p>
+        <p>Escríbenos desde <a href="#contacto" data-motivo="Quiero salir en la serie">Atención al Cliente</a> y cuéntanos quién eres. Para salir en la serie tienes que ser mayor de edad. Nunca publicamos nada tuyo sin tu permiso por escrito.</p>
       </div>
     </div>
   </section>
@@ -128,7 +128,7 @@
       <span class="pestana">Departamento de Suministros</span>
       <div class="cabeza">
         <h2>Tienda de la empresa</h2>
-        <p>Material de oficina oficial de Suministros Limbo S.L. Si algo te gusta, pulsa «¡Lo quiero!»: los artículos que más se pidan son los que fabricaremos.</p>
+        <p>Material de oficina oficial de Suministros Limbo S.L. Si algo te gusta, pulsa «¡Lo quiero!» y escríbenos: los artículos que más se pidan son los que fabricaremos.</p>
       </div>
       <div class="productos" id="productos"></div>
 
@@ -160,55 +160,21 @@
         </ul>
         <p class="baja">Te puedes dar de baja cuando quieras con el enlace que va al final de cada boletín, o escribiendo «BAJA» a <a href="mailto:info@limbosl.com?subject=BAJA">info@limbosl.com</a>.</p>
       </div>
-      <div class="panel">
-        <form id="form-boletin" data-asunto="Alta en el Boletín Interno" data-ok="¡Casi estás! Te hemos enviado un email: pulsa el enlace para confirmar tu alta. Si no lo confirmas, no te escribiremos.">
-          <div class="campos dosc">
-            <label for="b-email">Email<input id="b-email" name="email" type="email" autocomplete="email" required></label>
-            <label for="b-nombre">Nombre (opcional)<input id="b-nombre" name="nombre" autocomplete="given-name"></label>
-          </div>
-          <label class="check" for="b-acepto"><input id="b-acepto" name="consentimiento_boletin" value="sí" type="checkbox" required> <span>Quiero recibir el Boletín Interno de Limbo S.L. por email. Sé que puedo darme de baja en cualquier momento.</span></label>
-          <label class="check" for="b-privacidad"><input id="b-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a>.</span></label>
-          <label class="check" for="b-edad"><input id="b-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
-          <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
-          <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
-          <button class="btn tinta" type="submit">Apuntarme</button>
-          <p class="estado" role="status"></p>
-        </form>
+      <div class="panel boletin-alta">
+        <p><strong>Apúntate en un minuto.</strong> Pulsa el botón, escribe tu nombre y te abrimos un correo ya preparado. Cuando nos llegue, te mandamos la confirmación.</p>
+        <a class="btn tinta" href="#contacto" data-motivo="Alta en el Boletín Interno" data-boletin>Quiero el Boletín</a>
       </div>
     </div>
   </section>
 
   <section class="seccion oscura" id="colaboraciones">
-    <div class="wrap dos">
+    <div class="wrap">
       <div class="texto">
         <span class="pestana" style="justify-self:start">Relaciones externas</span>
         <h2 style="font-size:clamp(34px,7vw,56px)">Colaboraciones y propuestas</h2>
         <p>¿Tienes una marca, un medio, un proyecto o una voz que encaje en Limbo S.L.? ¿Quieres salir en la serie? Cuéntanoslo y lo estudiamos en la próxima reunión del lunes 25.</p>
-        <p class="firma">Correo directo: info@limbosl.com</p>
-      </div>
-      <div class="panel">
-        <form data-asunto="Colaboración o propuesta" data-ok="Propuesta recibida. Pasa a la reunión del próximo lunes 25.">
-          <div class="campos dosc">
-            <label for="c-nombre">Nombre<input id="c-nombre" name="nombre" autocomplete="name" required></label>
-            <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" required></label>
-          </div>
-          <label for="c-tipo">Tipo de propuesta
-            <select id="c-tipo" name="tipo">
-              <option>Colaboración con una marca</option>
-              <option>Prensa o entrevista</option>
-              <option>Colaboración creativa (voz, música, animación)</option>
-              <option>Quiero salir en la serie</option>
-              <option>Otra cosa</option>
-            </select>
-          </label>
-          <label for="c-mensaje">Cuéntanos<textarea id="c-mensaje" name="mensaje" required></textarea></label>
-          <label class="check" for="c-privacidad"><input id="c-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que usen mis datos para responderme.</span></label>
-          <label class="check" for="c-edad"><input id="c-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
-          <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
-          <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
-          <button class="btn" type="submit">Enviar propuesta</button>
-          <p class="estado" role="status"></p>
-        </form>
+        <p class="firma">Correo directo: <a href="mailto:info@limbosl.com?subject=Colaboraci%C3%B3n%20o%20propuesta">info@limbosl.com</a></p>
+        <p><a class="btn" href="#contacto" data-motivo="Colaboración o propuesta">Cuéntanos tu propuesta</a></p>
       </div>
     </div>
   </section>
@@ -234,26 +200,24 @@
         <h2 style="font-size:clamp(34px,7vw,56px)">Su llamada es importante para nosotros</h2>
         <p>Escríbenos y te respondemos antes del próximo lunes 25.</p>
         <p class="postit-teorias" id="teorias"><strong>¿Quién es Miguel?</strong> Si tienes una teoría, cuéntanosla aquí. Las mejores podrían salir en el Boletín o en un clip.</p>
-        <p class="firma">info@limbosl.com</p>
+        <p class="firma"><a href="mailto:info@limbosl.com">info@limbosl.com</a></p>
         <div class="redes">
           <a data-red="tiktok" target="_blank" rel="noopener">TikTok @limbosl</a>
           <a data-red="instagram" target="_blank" rel="noopener">Instagram @limbo.sl</a>
         </div>
       </div>
       <div class="panel">
-        <form data-asunto="Atención al Cliente">
-          <div class="campos dosc">
-            <label for="a-nombre">Nombre<input id="a-nombre" name="nombre" autocomplete="name" required></label>
-            <label for="a-email">Email<input id="a-email" name="email" type="email" autocomplete="email" required></label>
-          </div>
+        <form id="form-contacto">
+          <label for="a-nombre">Nombre<input id="a-nombre" name="nombre" autocomplete="name" required></label>
           <label for="a-motivo">Motivo<input id="a-motivo" name="motivo" placeholder="Ej.: una duda o tu teoría sobre Miguel"></label>
           <label for="a-mensaje">Mensaje<textarea id="a-mensaje" name="mensaje" required></textarea></label>
-          <label class="check" for="a-publicar"><input id="a-publicar" name="permiso_publicar_teoria" value="sí" type="checkbox"> <span>Opcional, si nos cuentas una teoría sobre Miguel: podéis leerla en el Boletín o en un clip, citando solo mi nombre de pila.</span></label>
-          <label class="check" for="a-privacidad"><input id="a-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que usen mis datos para responderme.</span></label>
+          <label class="check" for="a-boletin"><input id="a-boletin" name="boletin" type="checkbox"> <span>Opcional: apuntadme también al Boletín Interno. Sé que puedo darme de baja cuando quiera.</span></label>
+          <label class="check" for="a-publicar"><input id="a-publicar" name="publicar" type="checkbox"> <span>Opcional, si es una teoría sobre Miguel: podéis leerla en el Boletín o en un clip, citando solo mi nombre de pila.</span></label>
+          <label class="check" for="a-privacidad"><input id="a-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a>.</span></label>
           <label class="check" for="a-edad"><input id="a-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
           <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
-          <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
-          <button class="btn tinta" type="submit">Enviar</button>
+          <button class="btn tinta" type="submit">Abrir mi correo y enviar</button>
+          <p class="nota-form">Al pulsar se abre tu aplicación de correo con el mensaje ya escrito para info@limbosl.com. Solo tienes que darle a Enviar.</p>
           <p class="estado" role="status"></p>
         </form>
       </div>
@@ -292,26 +256,6 @@
   </div>
 </dialog>
 
-<dialog id="dlg-quiero" aria-labelledby="q-titulo">
-  <div class="panel">
-    <button class="cerrar" id="dlg-cerrar" type="button">Cerrar</button>
-    <span class="etiqueta" style="justify-self:start">Hoja de pedido</span>
-    <h3 id="q-titulo">Artículo</h3>
-    <p>Todavía no está a la venta. Déjanos tu email y te avisamos si lo fabricamos. No se cobra nada.</p>
-    <form id="form-quiero" data-asunto="Alguien lo quiere" data-ok="Apuntado. Si lo fabricamos, serás de los primeros en saberlo.">
-      <input type="hidden" name="producto" id="q-producto">
-      <label for="q-nombre">Nombre<input id="q-nombre" name="nombre" autocomplete="name" required></label>
-      <label for="q-email">Email<input id="q-email" name="email" type="email" autocomplete="email" required></label>
-      <label for="q-comentario">¿Algo más? (opcional)<input id="q-comentario" name="comentario"></label>
-      <label class="check" for="q-privacidad"><input id="q-privacidad" type="checkbox" required> <span>Acepto la <a href="privacidad.html">política de privacidad</a>: solo usarán mi email para avisarme de este artículo.</span></label>
-      <label class="check" for="q-edad"><input id="q-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
-      <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
-      <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
-      <button class="btn tinta" type="submit">Lo quiero</button>
-      <p class="estado" role="status"></p>
-    </form>
-  </div>
-</dialog>
 
 <footer class="pie">
   <div class="wrap">
@@ -338,7 +282,7 @@
         <li><a data-red="tiktok" target="_blank" rel="noopener">TikTok · @limbosl</a></li>
         <li><a data-red="instagram" target="_blank" rel="noopener">Instagram · @limbo.sl</a></li>
         <li><a data-red="youtube" target="_blank" rel="noopener">YouTube · próximamente</a></li>
-        <li>info@limbosl.com</li>
+        <li><a href="mailto:info@limbosl.com">info@limbosl.com</a></li>
       </ul>
     </div>
     <p class="legal">© <span id="anio">2026</span> Limbo S.L.™ Todos los derechos reservados. Prohibido su uso para entrenar inteligencia artificial. · <a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></p>
