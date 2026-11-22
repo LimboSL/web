@@ -123,25 +123,6 @@
   }));
   pintarPlantilla("paramo");
 
-  /* Personajes extra */
-  if (typeof EXTRAS !== "undefined" && $("#extras-lista")) {
-    $("#extras-lista").innerHTML = EXTRAS.map((x) => `<article class="extra">
-        <div class="extra-foto">${x.foto ? `<img src="${esc(x.foto)}" alt="${esc(x.nombre)}" loading="lazy">` : `<span class="silueta" aria-hidden="true">?</span>`}</div>
-        <div class="extra-txt">
-          <p class="nombre">${esc(x.nombre)}</p>
-          ${x.sale ? `<p class="sale">${esc(x.sale)}</p>` : ""}
-          <p>${esc(x.texto)}</p>
-          <p class="origen">${esc(x.origen || "")}</p>
-        </div>
-      </article>`).join("") + `<article class="extra extra-hueco">
-        <div class="extra-foto"><span class="silueta" aria-hidden="true">+</span></div>
-        <div class="extra-txt">
-          <p class="nombre">¿El tuyo?</p>
-          <p>Mándanos tu personaje: tu compañero de trabajo, tu jefe, tu perro o alguien que te inventes. Los mejores entran en la serie.</p>
-          <a class="btn" href="#contacto" data-motivo="Quiero proponer un personaje">Proponer un personaje</a>
-        </div>
-      </article>`;
-  }
   $("#total-plantilla").textContent = PLANTILLA.length;
 
   /* Tienda */
