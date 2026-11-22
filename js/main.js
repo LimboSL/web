@@ -115,8 +115,24 @@
         <p class="perfil">${esc(p.perfil)}</p>
         <p class="video">${video}</p>
       </article>`;
-    }).join("");
+    }).join("") + (filtro === "villa" ? FICHA_MIGUEL : "");
   }
+  const T = (n) => `<span class="tachon" style="width:${n}ch" aria-label="tachado"></span>`;
+  const FICHA_MIGUEL = `<article class="ficha ficha-miguel">
+        <div class="foto"><span class="silueta" aria-hidden="true">?</span></div>
+        <div>
+          <span class="sede-chip">${T(7)}</span>
+          <p class="nombre">Miguel</p>
+          <dl>
+            <dt>Puesto</dt><dd>${T(9)}</dd>
+            <dt>Edad</dt><dd>${T(3)}</dd>
+            <dt>Antigüedad</dt><dd>${T(11)}</dd>
+          </dl>
+        </div>
+        <p class="frase">«${T(18)}»</p>
+        <p class="perfil">${T(24)} ${T(12)}</p>
+        <span class="sello sello-miguel">¿Quién es Miguel?</span>
+      </article>`;
   document.querySelectorAll(".filtros button").forEach((b) => b.addEventListener("click", () => {
     document.querySelectorAll(".filtros button").forEach((x) => x.setAttribute("aria-pressed", x === b));
     pintarPlantilla(b.dataset.f);
