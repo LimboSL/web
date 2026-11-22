@@ -169,7 +169,7 @@ p { margin: 0; }
 .ficha .perfil { grid-column: 1 / -1; font-size: 15px; color: var(--tinta-2); }
 .ficha .video { grid-column: 1 / -1; font-family: var(--maquina); font-size: 12px; color: var(--gris); display: flex; align-items: center; gap: 8px; }
 .ficha .video a { color: var(--sello); font-weight: 700; }
-.ficha .sede-chip { position: absolute; top: 12px; right: 12px; font: 700 10px var(--body); letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: var(--fluor); }
+.ficha .sede-chip { display: inline-block; margin-bottom: 6px; font: 700 10px var(--body); letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: var(--fluor); }
 .ficha .sede-chip.villa { background: #f6d98f; }
 
 /* ---------- Tienda ---------- */

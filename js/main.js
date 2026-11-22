@@ -101,9 +101,9 @@
         ? `<a href="https://www.youtube.com/watch?v=${esc(p.video)}" target="_blank" rel="noopener">▶ Ver su presentación</a>`
         : (p.grabado ? "Vídeo de presentación grabado · pronto en YouTube" : "Vídeo de presentación: próximamente");
       return `<article class="ficha">
-        <span class="sede-chip ${villa ? "villa" : ""}">${villa ? "Villacándida" : "El Páramo"}</span>
         <div class="foto">${foto}</div>
         <div>
+          <span class="sede-chip ${villa ? "villa" : ""}">${villa ? "Villacándida" : "El Páramo"}</span>
           <p class="nombre">${esc(p.nombre)}</p>
           <dl>
             <dt>Puesto</dt><dd>${esc(p.puesto)}</dd>
@@ -119,9 +119,9 @@
   }
   const T = (n) => `<span class="tachon" style="width:${n}ch" aria-label="tachado"></span>`;
   const FICHA_MIGUEL = `<article class="ficha ficha-miguel">
-        <span class="sede-chip">${T(7)}</span>
         <div class="foto"><span class="silueta" aria-hidden="true">?</span></div>
         <div>
+          <span class="sede-chip">${T(7)}</span>
           <p class="nombre">Miguel</p>
           <dl>
             <dt>Puesto</dt><dd>${T(9)}</dd>
@@ -174,12 +174,7 @@
   $("#dlg-cerrar").addEventListener("click", () => dlg.close ? dlg.close() : dlg.removeAttribute("open"));
 
   /* Teorías sobre Miguel en Atención al Cliente */
-  const motivo = $("#a-motivo"), publicar = $("#a-publicar-box");
-  if (motivo && publicar) {
-    const ver = () => { publicar.hidden = motivo.value !== "Mi teoría sobre Miguel"; if (publicar.hidden) $("#a-publicar").checked = false; };
-    motivo.addEventListener("change", ver); ver();
-    document.querySelectorAll('a[href="#teorias"]').forEach((a) => a.addEventListener("click", () => { motivo.value = "Mi teoría sobre Miguel"; ver(); }));
-  }
+  document.querySelectorAll('a[href="#teorias"]').forEach((a) => a.addEventListener("click", () => { const m = $("#a-motivo"); if (m && !m.value) m.value = "Mi teoría sobre Miguel"; }));
 
   /* Envío de formularios */
   document.querySelectorAll("form[data-asunto]").forEach((f) => f.addEventListener("submit", async (e) => {

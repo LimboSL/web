@@ -233,7 +233,7 @@
         <span class="pestana" style="justify-self:start">Atención al Cliente</span>
         <h2 style="font-size:clamp(34px,7vw,56px)">Su llamada es importante para nosotros</h2>
         <p>Escríbenos y te respondemos antes del próximo lunes 25.</p>
-        <p class="postit-teorias" id="teorias"><strong>¿Quién es Miguel?</strong> Si tienes una teoría, cuéntanosla aquí eligiendo «Mi teoría sobre Miguel». Las mejores podrían salir en el Boletín o en un clip.</p>
+        <p class="postit-teorias" id="teorias"><strong>¿Quién es Miguel?</strong> Si tienes una teoría, cuéntanosla aquí. Las mejores podrían salir en el Boletín o en un clip.</p>
         <p class="firma">info@limbosl.com</p>
         <div class="redes">
           <a data-red="tiktok" target="_blank" rel="noopener">TikTok @limbosl</a>
@@ -246,15 +246,9 @@
             <label for="a-nombre">Nombre<input id="a-nombre" name="nombre" autocomplete="name" required></label>
             <label for="a-email">Email<input id="a-email" name="email" type="email" autocomplete="email" required></label>
           </div>
-          <label for="a-motivo">Motivo
-            <select id="a-motivo" name="motivo">
-              <option>Consulta</option>
-              <option>Mi teoría sobre Miguel</option>
-              <option>Darme de baja o borrar mis datos</option>
-            </select>
-          </label>
+          <label for="a-motivo">Motivo<input id="a-motivo" name="motivo" placeholder="Por ejemplo: una duda, una idea, mi teoría sobre Miguel..."></label>
           <label for="a-mensaje">Mensaje<textarea id="a-mensaje" name="mensaje" required></textarea></label>
-          <label class="check" for="a-publicar" id="a-publicar-box" hidden><input id="a-publicar" name="permiso_publicar_teoria" value="sí" type="checkbox"> <span>Opcional: podéis leer mi teoría en el Boletín o en un clip, citando solo mi nombre de pila.</span></label>
+          <label class="check" for="a-publicar"><input id="a-publicar" name="permiso_publicar_teoria" value="sí" type="checkbox"> <span>Opcional, si nos cuentas una teoría sobre Miguel: podéis leerla en el Boletín o en un clip, citando solo mi nombre de pila.</span></label>
           <label class="check" for="a-privacidad"><input id="a-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que usen mis datos para responderme.</span></label>
           <label class="check" for="a-edad"><input id="a-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
           <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
