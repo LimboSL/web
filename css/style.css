@@ -108,7 +108,7 @@ p { margin: 0; }
 
 /* Cinta de frases */
 .cinta { background: var(--mostaza); color: var(--tinta); overflow: hidden; border-block: 2px solid var(--tinta); }
-.cinta div { display: flex; gap: 40px; width: max-content; padding: 10px 0; font: 700 15px var(--display); white-space: nowrap; animation: cinta 45s linear infinite; }
+.cinta div { display: flex; gap: 40px; width: max-content; padding: 10px 40px 10px 0; font: 700 15px var(--display); white-space: nowrap; animation: cinta 45s linear infinite; will-change: transform; -webkit-animation: cinta 45s linear infinite; }
 .cinta span::after { content: "✶"; margin-left: 40px; }
 @keyframes cinta { to { transform: translateX(-50%); } }
 
@@ -252,6 +252,8 @@ footer.pie { background: var(--tinta); color: var(--papel); padding: 44px 0 28px
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
+  /* La cinta de frases se mueve siempre, despacio: es parte de la portada */
+  .cinta div { animation: cinta 90s linear infinite !important; }
 }
 
 /* ---------- Visítanos ---------- */
