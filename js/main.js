@@ -92,7 +92,7 @@
   /* Plantilla */
   const iniciales = (n) => n.replace(/^(Doña|Don) /, "").split(" ").map((p) => p[0]).join("").slice(0, 2);
   function pintarPlantilla(filtro) {
-    $("#fichas").innerHTML = PLANTILLA.filter((p) => filtro === "todas" || p.sede === filtro).map((p) => {
+    $("#fichas").innerHTML = PLANTILLA.filter((p) => p.sede === filtro).map((p) => {
       const villa = p.sede === "villa", remoto = p.sede === "remoto";
       const foto = p.foto
         ? `<img src="${esc(p.foto)}" alt="Ficha de ${esc(p.nombre)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'iniciales',textContent:'${esc(iniciales(p.nombre))}'}))">`
@@ -115,29 +115,13 @@
         <p class="perfil">${esc(p.perfil)}</p>
         <p class="video">${video}</p>
       </article>`;
-    }).join("") + (filtro === "todas" ? FICHA_MIGUEL : "");
+    }).join("");
   }
-  const T = (n) => `<span class="tachon" style="width:${n}ch" aria-label="tachado"></span>`;
-  const FICHA_MIGUEL = `<article class="ficha ficha-miguel">
-        <div class="foto"><span class="silueta" aria-hidden="true">?</span></div>
-        <div>
-          <span class="sede-chip">${T(7)}</span>
-          <p class="nombre">Miguel</p>
-          <dl>
-            <dt>Puesto</dt><dd>${T(9)}</dd>
-            <dt>Edad</dt><dd>${T(3)}</dd>
-            <dt>Antigüedad</dt><dd>${T(11)}</dd>
-          </dl>
-        </div>
-        <p class="frase">«${T(18)}»</p>
-        <p class="perfil">${T(24)} ${T(12)}</p>
-        <a class="sello sello-miguel" href="#miguel">¿Quién es Miguel?</a>
-      </article>`;
   document.querySelectorAll(".filtros button").forEach((b) => b.addEventListener("click", () => {
     document.querySelectorAll(".filtros button").forEach((x) => x.setAttribute("aria-pressed", x === b));
     pintarPlantilla(b.dataset.f);
   }));
-  pintarPlantilla("todas");
+  pintarPlantilla("paramo");
 
   /* Personajes extra */
   if (typeof EXTRAS !== "undefined" && $("#extras-lista")) {
