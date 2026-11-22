@@ -354,3 +354,14 @@ footer.pie { background: var(--tinta); color: var(--papel); padding: 44px 0 28px
 .nota-form { font-size: 13px; color: var(--gris); margin: 0; }
 .boletin-alta { display: grid; gap: 16px; align-content: start; }
 .boletin-alta .btn { justify-self: start; }
+
+/* Teletrabajo · desde el más acá */
+.ficha .sede-chip.remoto { background: #cfe6f5; }
+
+/* Expediente de Miguel */
+.expediente { position: relative; display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; align-items: flex-start; padding: 8px 0 24px; }
+.polaroid { margin: 0; background: #fff; padding: 12px 12px 16px; width: min(280px, 80vw); box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 14px 30px rgba(28,38,64,0.12); transform: rotate(-2deg); }
+.polaroid.girada { transform: rotate(3deg); }
+.polaroid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; background: #d9d4c4; display: block; }
+.polaroid figcaption { font-family: var(--maquina); font-size: 13px; line-height: 1.4; padding-top: 10px; color: var(--tinta); }
+.sello-expediente { position: absolute; right: 4%; bottom: 0; transform: rotate(-8deg); }

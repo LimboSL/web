@@ -93,7 +93,7 @@
   const iniciales = (n) => n.replace(/^(Doña|Don) /, "").split(" ").map((p) => p[0]).join("").slice(0, 2);
   function pintarPlantilla(filtro) {
     $("#fichas").innerHTML = PLANTILLA.filter((p) => filtro === "todas" || p.sede === filtro).map((p) => {
-      const villa = p.sede === "villa";
+      const villa = p.sede === "villa", remoto = p.sede === "remoto";
       const foto = p.foto
         ? `<img src="${esc(p.foto)}" alt="Ficha de ${esc(p.nombre)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'iniciales',textContent:'${esc(iniciales(p.nombre))}'}))">`
         : `<span class="iniciales" aria-hidden="true">${esc(iniciales(p.nombre))}</span>`;
@@ -103,7 +103,7 @@
       return `<article class="ficha">
         <div class="foto">${foto}</div>
         <div>
-          <span class="sede-chip ${villa ? "villa" : ""}">${villa ? "Villacándida" : "El Páramo"}</span>
+          <span class="sede-chip ${villa ? "villa" : remoto ? "remoto" : ""}">${villa ? "Villacándida" : remoto ? "Desde el más acá" : "El Páramo"}</span>
           <p class="nombre">${esc(p.nombre)}</p>
           <dl>
             <dt>Puesto</dt><dd>${esc(p.puesto)}</dd>
@@ -131,7 +131,7 @@
         </div>
         <p class="frase">«${T(18)}»</p>
         <p class="perfil">${T(24)} ${T(12)}</p>
-        <span class="sello sello-miguel">¿Quién es Miguel?</span>
+        <a class="sello sello-miguel" href="#miguel">¿Quién es Miguel?</a>
       </article>`;
   document.querySelectorAll(".filtros button").forEach((b) => b.addEventListener("click", () => {
     document.querySelectorAll(".filtros button").forEach((x) => x.setAttribute("aria-pressed", x === b));
