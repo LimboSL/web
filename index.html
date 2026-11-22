@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limbo S.L.</title>
+  <meta name="description" content="Limbo S.L., serie de animación para mayores de 14 años: en Suministros Limbo todos los días son lunes 25. Capítulos, el equipo al completo y la tienda de la empresa.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Limbo S.L. · Hoy es lunes. Y mañana, también.">
+  <meta property="og:description" content="La comedia de animación de una oficina de la que nadie se va. Serie para mayores de 14 años. Capítulos, equipo y tienda.">
+  <meta property="og:image" content="https://www.limbosl.com/img/oficina.jpg">
+  <meta property="og:url" content="https://www.limbosl.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1c2640">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="tdm-reservation" content="1">
+  <meta name="rating" content="mature">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c2640'/%3E%3Cellipse cx='32' cy='14' rx='13' ry='4' fill='none' stroke='%23e2a52c' stroke-width='4'/%3E%3Ctext x='32' y='52' font-family='Arial Black,Arial' font-weight='900' font-size='34' text-anchor='middle' fill='%23f8f3e6'%3E25%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Limbo S.L., inicio"><b>LIMB<span class="o">O</span> S.L.</b><small>SUMINISTROS</small></a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">MENÚ</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#capitulos">Capítulos</a>
+      <a href="#plantilla">El equipo</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#visitanos">Visítanos</a>
+      <a href="#boletin">Boletín</a>
+      <a href="#colaboraciones">Colaboraciones</a>
+      <a href="#direccion">Dirección</a>
+      <a href="#contacto">Atención al Cliente</a>
+      <div class="redes">
+        <a data-red="tiktok" target="_blank" rel="noopener">TikTok</a>
+        <a data-red="instagram" target="_blank" rel="noopener">Instagram</a>
+        <a data-red="youtube" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="portada" id="inicio">
+    <div class="wrap">
+      <div>
+        <span class="etiqueta">Expediente nº 25 · Suministros para oficina</span>
+        <h1>Suministros<br><span>Limbo S.L.</span></h1>
+        <p class="lema">Hoy es lunes. Y mañana, también.</p>
+        <p class="bajada">Una comedia de animación sobre una oficina de la que nadie se va. Capítulos enteros en YouTube y clips cada semana en TikTok e Instagram.</p>
+        <div class="sellos-portada">
+          <span class="sello-edad"><b>+14</b> Serie para mayores de 14 años</span>
+          <a class="sello-cookies" href="cookies.html">🍪 0 cookies. Con orgullo.</a>
+        </div>
+        <div class="botones">
+          <a class="btn" href="#capitulos">Ver capítulos</a>
+          <a class="btn hueco" href="#plantilla">Conoce al equipo</a>
+        </div>
+      </div>
+      <div class="calendario">
+        <div class="taco">
+          <div class="anillas"></div>
+          <div class="hoja-fondo" aria-hidden="true"><div class="dia">LUNES</div><div class="num">25</div><div class="mes">Suministros Limbo S.L.</div></div>
+          <div class="hoja" id="hoja"><div class="dia">LUNES</div><div class="num">25</div><div class="mes">Suministros Limbo S.L.</div></div>
+        </div>
+        <button class="btn hueco" id="arrancar" type="button">Arrancar la hoja</button>
+        <p class="contador" id="contador" aria-live="polite">A ver si mañana es otro día.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cinta" aria-hidden="true"><div id="cinta"></div></div>
+
+  <section class="seccion oscura" id="capitulos">
+    <div class="wrap">
+      <span class="pestana">Archivo audiovisual</span>
+      <div class="cabeza">
+        <h2>Capítulos</h2>
+        <p>Cada capítulo dura unos dos minutos. Cuando estén en YouTube aparecerán aquí, y podrás comentar cada uno en su vídeo.</p>
+      </div>
+      <div class="episodios" id="episodios"></div>
+    </div>
+  </section>
+
+  <section class="seccion" id="plantilla">
+    <div class="wrap">
+      <span class="pestana">Recursos Humanos</span>
+      <div class="cabeza">
+        <h2>El equipo</h2>
+        <p><span id="total-plantilla">26</span> empleados repartidos entre la sede central de El Páramo y la sucursal luminosa de Villacándida. Fichas oficiales, sacadas del archivador.</p>
+      </div>
+      <div class="filtros" role="group" aria-label="Filtrar por sede">
+        <button type="button" data-f="todas" aria-pressed="true">Todas</button>
+        <button type="button" data-f="paramo" aria-pressed="false">Sede · El Páramo</button>
+        <button type="button" data-f="villa" aria-pressed="false">Sucursal · Villacándida</button>
+      </div>
+      <div class="fichas" id="fichas"></div>
+    </div>
+  </section>
+
+  <section class="seccion folio" id="visitanos">
+    <div class="wrap">
+      <span class="pestana">Nuestras instalaciones</span>
+      <div class="cabeza">
+        <h2>Visítanos</h2>
+        <p>Dos sedes, una empresa y un mismo lunes 25. Elija la que le pille más cerca. O la que tenga menos nubes.</p>
+      </div>
+      <div class="sedes" id="sedes"></div>
+    </div>
+  </section>
+
+  <section class="seccion" id="empleo">
+    <div class="wrap dos">
+      <img src="img/ficha-empleado.jpg" alt="Ficha de empleado de Suministros Limbo S.L. en blanco, con sello de la empresa" loading="lazy">
+      <div class="texto">
+        <span class="pestana" style="justify-self:start">Bolsa de empleo</span>
+        <h2 style="font-size:clamp(34px,7vw,56px)">Hazte empleado de Limbo S.L.</h2>
+        <p>Cada mes, alguien de nuestra comunidad entra en el equipo: lo convertimos en personaje y sale en un clip de la serie. Puede que hasta tenga su propio spin-off.</p>
+        <p>Rellena tu solicitud en <a href="#colaboraciones">Colaboraciones y propuestas</a> eligiendo «Quiero salir en la serie». Para salir en la serie tienes que ser mayor de edad. Nunca publicamos nada tuyo sin tu permiso por escrito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion folio" id="tienda">
+    <div class="wrap">
+      <span class="pestana">Departamento de Suministros</span>
+      <div class="cabeza">
+        <h2>Tienda de la empresa</h2>
+        <p>Material de oficina oficial de Suministros Limbo S.L. Si algo te gusta, pulsa «¡Lo quiero!»: los artículos que más se pidan son los que fabricaremos.</p>
+      </div>
+      <div class="productos" id="productos"></div>
+
+      <div class="catalogo-broma">
+        <h3>Catálogo de suministros</h3>
+        <p>Artículos de la empresa todavía sin fabricar. Si quieres alguno, dilo y lo ponemos en la línea de producción.</p>
+        <div class="albaran">
+          <table>
+            <thead><tr><th>Ref.</th><th>Artículo</th><th><span class="sr">Pedir</span></th></tr></thead>
+            <tbody id="suministros"></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="aviso-tienda">Por ahora no se vende nada: «¡Lo quiero!» no cobra ni reserva, solo nos dice qué te gustaría tener. Los precios son orientativos.</p>
+    </div>
+  </section>
+
+  <section class="seccion boletin" id="boletin">
+    <div class="wrap">
+      <div class="texto">
+        <span class="pestana" style="justify-self:start">Comunicación interna</span>
+        <h2 style="font-size:clamp(34px,7vw,56px)">El Boletín Interno</h2>
+        <p>La circular de la empresa, directa a tu correo. Solo te escribimos cuando hay algo:</p>
+        <ul>
+          <li>Capítulos y clips nuevos.</li>
+          <li>Personajes nuevos aprobados por Dirección.</li>
+          <li>Contenido extra y cosas que no salen en redes.</li>
+          <li>Novedades de la tienda.</li>
+        </ul>
+        <p class="baja">Te puedes dar de baja cuando quieras con el enlace que va al final de cada boletín, o escribiendo «BAJA» a <a href="mailto:info@limbosl.com?subject=BAJA">info@limbosl.com</a>.</p>
+      </div>
+      <div class="panel">
+        <form id="form-boletin" data-asunto="Alta en el Boletín Interno" data-ok="¡Casi estás! Te hemos enviado un email: pulsa el enlace para confirmar tu alta. Si no lo confirmas, no te escribiremos.">
+          <div class="campos dosc">
+            <label for="b-email">Email<input id="b-email" name="email" type="email" autocomplete="email" required></label>
+            <label for="b-nombre">Nombre (opcional)<input id="b-nombre" name="nombre" autocomplete="given-name"></label>
+          </div>
+          <label class="check" for="b-acepto"><input id="b-acepto" name="consentimiento_boletin" value="sí" type="checkbox" required> <span>Quiero recibir el Boletín Interno de Limbo S.L. por email. Sé que puedo darme de baja en cualquier momento.</span></label>
+          <label class="check" for="b-privacidad"><input id="b-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a>.</span></label>
+          <label class="check" for="b-edad"><input id="b-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
+          <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
+          <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+          <button class="btn tinta" type="submit">Apuntarme</button>
+          <p class="estado" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion oscura" id="colaboraciones">
+    <div class="wrap dos">
+      <div class="texto">
+        <span class="pestana" style="justify-self:start">Relaciones externas</span>
+        <h2 style="font-size:clamp(34px,7vw,56px)">Colaboraciones y propuestas</h2>
+        <p>¿Tienes una marca, un medio, un proyecto o una voz que encaje en Limbo S.L.? ¿Quieres salir en la serie? Cuéntanoslo y lo estudiamos en la próxima reunión del lunes 25.</p>
+        <p class="firma">Correo directo: info@limbosl.com</p>
+      </div>
+      <div class="panel">
+        <form data-asunto="Colaboración o propuesta" data-ok="Propuesta recibida. Pasa a la reunión del próximo lunes 25.">
+          <div class="campos dosc">
+            <label for="c-nombre">Nombre<input id="c-nombre" name="nombre" autocomplete="name" required></label>
+            <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label for="c-tipo">Tipo de propuesta
+            <select id="c-tipo" name="tipo">
+              <option>Colaboración con una marca</option>
+              <option>Prensa o entrevista</option>
+              <option>Colaboración creativa (voz, música, animación)</option>
+              <option>Quiero salir en la serie</option>
+              <option>Otra cosa</option>
+            </select>
+          </label>
+          <label for="c-mensaje">Cuéntanos<textarea id="c-mensaje" name="mensaje" required></textarea></label>
+          <label class="check" for="c-privacidad"><input id="c-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que usen mis datos para responderme.</span></label>
+          <label class="check" for="c-edad"><input id="c-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
+          <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
+          <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+          <button class="btn" type="submit">Enviar propuesta</button>
+          <p class="estado" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion folio" id="direccion">
+    <div class="wrap dos">
+      <img src="img/direccion.jpg" alt="Virginia señala los storyboards de la serie mientras Claude, una nube con acreditación de empleado, toma notas" loading="lazy">
+      <div class="texto">
+        <span class="pestana" style="justify-self:start">Dirección</span>
+        <h2 style="font-size:clamp(34px,7vw,56px)">Quién está detrás</h2>
+        <p>Detrás de Limbo S.L. hay un equipo de dos.</p>
+        <p><strong>Virginia</strong> escribe los guiones. Cada personaje, cada chiste y cada lunes 25 salen de su cabeza.</p>
+        <p><strong>Claude</strong>, la nube, la ayuda a darles vida: convierte cada escena en los prompts con los que se generan las imágenes y las animaciones. Es una inteligencia artificial de Anthropic, y lo decimos con orgullo: esta serie la hacemos los dos.</p>
+        <p class="firma">Una persona con ideas y una nube que no se cansa. Desde siempre. Para siempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="contacto">
+    <div class="wrap dos">
+      <div class="texto">
+        <span class="pestana" style="justify-self:start">Atención al Cliente</span>
+        <h2 style="font-size:clamp(34px,7vw,56px)">Su llamada es importante para nosotros</h2>
+        <p>Escríbenos y te respondemos antes del próximo lunes 25.</p>
+        <p class="postit-teorias" id="teorias"><strong>¿Quién es Miguel?</strong> Si tienes una teoría, cuéntanosla aquí eligiendo «Mi teoría sobre Miguel». Las mejores podrían salir en el Boletín o en un clip.</p>
+        <p class="firma">info@limbosl.com</p>
+        <div class="redes">
+          <a data-red="tiktok" target="_blank" rel="noopener">TikTok @limbosl</a>
+          <a data-red="instagram" target="_blank" rel="noopener">Instagram @limbo.sl</a>
+        </div>
+      </div>
+      <div class="panel">
+        <form data-asunto="Atención al Cliente">
+          <div class="campos dosc">
+            <label for="a-nombre">Nombre<input id="a-nombre" name="nombre" autocomplete="name" required></label>
+            <label for="a-email">Email<input id="a-email" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label for="a-motivo">Motivo
+            <select id="a-motivo" name="motivo">
+              <option>Consulta</option>
+              <option>Mi teoría sobre Miguel</option>
+              <option>Darme de baja o borrar mis datos</option>
+            </select>
+          </label>
+          <label for="a-mensaje">Mensaje<textarea id="a-mensaje" name="mensaje" required></textarea></label>
+          <label class="check" for="a-publicar" id="a-publicar-box" hidden><input id="a-publicar" name="permiso_publicar_teoria" value="sí" type="checkbox"> <span>Opcional: podéis leer mi teoría en el Boletín o en un clip, citando solo mi nombre de pila.</span></label>
+          <label class="check" for="a-privacidad"><input id="a-privacidad" type="checkbox" required> <span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que usen mis datos para responderme.</span></label>
+          <label class="check" for="a-edad"><input id="a-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
+          <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
+          <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+          <button class="btn tinta" type="submit">Enviar</button>
+          <p class="estado" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<button class="kiko" id="kiko" type="button" aria-label="Kiko te espía. Pulsa para leer su informe secreto">
+  <span class="kiko-boc" id="kiko-boc" aria-hidden="true"></span>
+  <span class="kiko-cuerpo" id="kiko-cuerpo" aria-hidden="true">
+    <svg viewBox="0 0 120 140" width="100%" height="100%">
+      <rect x="86" y="0" width="34" height="140" fill="#8a6a45" stroke="#1c2640" stroke-width="3"/>
+      <rect x="86" y="44" width="34" height="6" fill="#6b5034"/><rect x="86" y="98" width="34" height="6" fill="#6b5034"/>
+      <path d="M78 74 Q80 120 70 140 L104 140 L102 82 Z" fill="#3f7a5c" stroke="#1c2640" stroke-width="3"/>
+      <circle cx="90" cy="118" r="7" fill="#e2a52c" stroke="#1c2640" stroke-width="2"/><circle cx="88" cy="116" r="1.6" fill="#1c2640"/><circle cx="92.5" cy="116" r="1.6" fill="#1c2640"/>
+      <ellipse cx="56" cy="64" rx="31" ry="34" fill="#f2c9a2" stroke="#1c2640" stroke-width="3"/>
+      <path d="M24 56 Q24 22 56 24 Q90 24 88 58 Q84 40 74 44 Q66 32 56 42 Q46 30 38 44 Q30 40 24 56Z" fill="#1d1d24" stroke="#1c2640" stroke-width="3"/>
+      <circle cx="44" cy="64" r="10" fill="#fff" stroke="#1c2640" stroke-width="3"/><circle cx="68" cy="64" r="10" fill="#fff" stroke="#1c2640" stroke-width="3"/>
+      <line x1="54" y1="64" x2="58" y2="64" stroke="#1c2640" stroke-width="3"/>
+      <g class="kiko-ojos"><circle cx="41" cy="65" r="3.6" fill="#1c2640"/><circle cx="65" cy="65" r="3.6" fill="#1c2640"/></g>
+      <path d="M46 84 Q56 80 64 85" fill="none" stroke="#1c2640" stroke-width="3" stroke-linecap="round"/>
+      <path d="M26 66 q-8 2 -8 12" fill="none" stroke="#1c2640" stroke-width="2.5"/><circle cx="18" cy="80" r="3" fill="#1c2640"/>
+      <ellipse cx="90" cy="74" rx="10" ry="8" fill="#f2c9a2" stroke="#1c2640" stroke-width="3"/>
+    </svg>
+  </span>
+</button>
+
+<dialog id="dlg-kiko" aria-labelledby="kiko-tit">
+  <div class="panel informe">
+    <button class="cerrar" id="kiko-cerrar" type="button">Cerrar</button>
+    <span class="sello" style="justify-self:start">Confidencial</span>
+    <h3 id="kiko-tit">Informe secreto de Kiko</h3>
+    <p class="etiqueta" id="kiko-num" style="justify-self:start">Informe nº 001</p>
+    <p id="kiko-dato" class="kiko-dato"></p>
+    <button class="btn tinta" id="kiko-otra" type="button">Tengo otra, jefe</button>
+  </div>
+</dialog>
+
+<dialog id="dlg-quiero" aria-labelledby="q-titulo">
+  <div class="panel">
+    <button class="cerrar" id="dlg-cerrar" type="button">Cerrar</button>
+    <span class="etiqueta" style="justify-self:start">Hoja de pedido</span>
+    <h3 id="q-titulo">Artículo</h3>
+    <p>Todavía no está a la venta. Déjanos tu email y te avisamos si lo fabricamos. No se cobra nada.</p>
+    <form id="form-quiero" data-asunto="Alguien lo quiere" data-ok="Apuntado. Si lo fabricamos, serás de los primeros en saberlo.">
+      <input type="hidden" name="producto" id="q-producto">
+      <label for="q-nombre">Nombre<input id="q-nombre" name="nombre" autocomplete="name" required></label>
+      <label for="q-email">Email<input id="q-email" name="email" type="email" autocomplete="email" required></label>
+      <label for="q-comentario">¿Algo más? (opcional)<input id="q-comentario" name="comentario"></label>
+      <label class="check" for="q-privacidad"><input id="q-privacidad" type="checkbox" required> <span>Acepto la <a href="privacidad.html">política de privacidad</a>: solo usarán mi email para avisarme de este artículo.</span></label>
+      <label class="check" for="q-edad"><input id="q-edad" type="checkbox" required> <span>Tengo 14 años o más.</span></label>
+      <p class="aviso-edad">Si tienes menos de 14 años, no nos envíes tus datos: pide a tu madre, padre o tutor que nos escriba.</p>
+      <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <button class="btn tinta" type="submit">Lo quiero</button>
+      <p class="estado" role="status"></p>
+    </form>
+  </div>
+</dialog>
+
+<footer class="pie">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#inicio"><b>LIMB<span class="o">O</span> S.L.</b><small>SUMINISTROS</small></a>
+      <p class="nota">Limbo S.L.™ es una serie de animación para mayores de 14 años. Suministros Limbo S.L. es una empresa ficticia: sus empleados, productos y lunes 25 solo existen en la serie.</p>
+      <p class="nota">🍪 Esta web no usa cookies ni te rastrea. Con orgullo.</p>
+    </div>
+    <div>
+      <h4>La empresa</h4>
+      <ul>
+        <li><a href="#capitulos">Capítulos</a></li>
+        <li><a href="#plantilla">El equipo</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#visitanos">Visítanos</a></li>
+        <li><a href="#boletin">Boletín Interno</a></li>
+        <li><a href="#colaboraciones">Colaboraciones</a></li>
+        <li><a href="#contacto">Atención al Cliente</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <ul>
+        <li><a data-red="tiktok" target="_blank" rel="noopener">TikTok · @limbosl</a></li>
+        <li><a data-red="instagram" target="_blank" rel="noopener">Instagram · @limbo.sl</a></li>
+        <li><a data-red="youtube" target="_blank" rel="noopener">YouTube · próximamente</a></li>
+        <li>info@limbosl.com</li>
+      </ul>
+    </div>
+    <p class="legal">© <span id="anio">2026</span> Limbo S.L.™ Todos los derechos reservados. Prohibido su uso para entrenar inteligencia artificial. · <a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></p>
+  </div>
+</footer>
+
+<script src="js/datos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
