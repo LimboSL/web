@@ -70,6 +70,13 @@ const PLANTILLA = [
   { nombre: "Luis", edad: 36, puesto: "Teletrabajo", sede: "remoto", antiguedad: "Conectado desde el más acá, a la carrera", frase: "¡Ahora no, que voy de culo!", perfil: "Estresado, siempre sudando y siempre corriendo a otra reunión. La cámara nunca deja de moverse.", senas: "Móvil en una mano y café en la otra", foto: "img/plantilla/luis.jpg", video: "", grabado: false }
 ];
 
+/* PERSONAJES EXTRA
+   Secundarios, animales y personajes que nos manda la gente.
+   foto: img/extras/nombre.jpg (horizontal 4:3). origen: "Creado por la casa" o "Propuesto por ..." (con su permiso por escrito). */
+const EXTRAS = [
+  { nombre: "El cachorro", sale: "Episodio 2 · El perro final", texto: "Apareció un lunes en la oficina y lo puso todo patas arriba. Una oreja de pie, otra caída y un gusto muy especial por los pañuelos ajenos. Lo raro es que nadie recuerda haber visto nunca un animal por allí.", foto: "img/extras/cachorro.jpg", origen: "Creado por la casa" }
+];
+
 /* TIENDA
    Por ahora los artículos son de prueba: el botón "¡Lo quiero!" no cobra nada,
    solo te manda un email con quién lo quiere. Cuando tengas Shopify,
