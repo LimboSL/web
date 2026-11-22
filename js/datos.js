@@ -79,7 +79,7 @@ const PRODUCTOS = [
   { ref: "LIMBO-CAM-GIA", nombre: "Camiseta «Dopo lavoro, aperitivo!»", precio: "22,90 €", img: "img/camiseta-dopo.jpg", texto: "Blanco roto. La de Gianni, para cuando termina la jornada (o un poco antes).", shopify: "" },
   { ref: "LIMBO-JER-DOS", nombre: "Jersey «Son las dos»", precio: "39,90 €", img: "img/jersey-dos.jpg", texto: "Mostaza. El reloj de Encarna marca la única hora que importa.", shopify: "" },
   { ref: "LIMBO-JER-LIM", nombre: "Jersey «Empleado del mes»", precio: "39,90 €", img: "img/jersey-limbo.jpg", texto: "Verde pálido, como la luz de los fluorescentes. Con el logo y el halo, para que se sepa dónde trabajas.", shopify: "" },
-  { ref: "LIMBO-PEG-01", nombre: "Pegatinas de la empresa", precio: "5,90 €", img: "img/pegatinas.jpg", texto: "El logo, las dos nubes y las frases de la plantilla para el portátil o el móvil.", shopify: "" }
+  { ref: "LIMBO-PEG-01", nombre: "Pegatinas de la empresa", precio: "5,90 €", img: "img/pegatinas.jpg", texto: "El logo, las dos nubes y las frases del equipo para el portátil o el móvil.", shopify: "" }
 ];
 
 /* CATÁLOGO DE SUMINISTROS (artículos de broma, todavía sin foto) */

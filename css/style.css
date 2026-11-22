@@ -333,3 +333,18 @@ footer.pie { background: var(--tinta); color: var(--papel); padding: 44px 0 28px
 .clasificado .linea { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .clasificado .volver { color: var(--sello); font-weight: 700; }
 .cinta span.miguel::after { color: var(--tinta); }
+
+/* Albarán en móvil: filas apiladas, sin desplazamiento lateral */
+.albaran { position: relative; }
+@media (max-width: 619px) {
+  .albaran table { min-width: 0; }
+  .albaran thead { display: none; }
+  .albaran tr { display: grid; grid-template-columns: 64px 1fr; gap: 6px 10px; padding: 12px 14px; border-bottom: 1px dashed #cbbd98; }
+  .albaran td { padding: 0; border: 0; }
+  .albaran td:first-child { grid-row: 1 / 3; font-size: 12px; color: var(--gris); padding-top: 2px; }
+  .albaran td:last-child { grid-column: 2; text-align: left; }
+}
+
+/* Formularios dentro de secciones oscuras: texto siempre legible */
+.panel, .panel label, .panel .check, .panel .check span { color: var(--tinta); }
+.oscura .panel .check a { color: var(--tinta); }
